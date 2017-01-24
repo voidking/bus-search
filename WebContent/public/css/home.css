@@ -1,0 +1,50 @@
+@import url(./base.css);
+@import url(./header.css);
+
+.container{
+	width: 100%;
+}
+
+.container .search{
+	margin: 0 auto;
+	width: 90%;
+	height: 7rem;
+	line-height: 7rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.search .input{
+	width: 70%;
+	height: 4rem;
+	border-radius: .5rem;
+	font-size: 2.5rem;
+	padding: 0 15px;
+	border: 1px solid #ccc;
+}
+
+.search .btn{
+	width: 20%;
+	height: 4rem;
+	border-radius: .5rem;
+	font-size: 2.5rem;
+	background: #398BFB;
+	color: #fff;
+}
+
+
+.container .content{
+	margin: 0 auto;
+	width: 96%;
+}
+
+.content a{
+	text-decoration: none;
+	color: #333;
+}
+
+.content ul li{
+	list-style: none;
+	padding: 1.5rem 1rem;
+	font-size: 2rem;
+	border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,30 @@
+@import url(./base.css);
+@import url(./header.css);
+
+.container{
+	width: 100%;
+}
+
+.container .info{
+	padding-left: 20px;
+	font-size: 1.6rem;
+	padding: 1rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.container .content{
+	margin: 0 auto;
+	width: 96%;
+}
+
+.content a{
+	text-decoration: none;
+	color: #333;
+}
+
+.content ul li{
+	list-style: none;
+	padding: 1rem 1rem;
+	font-size: 2rem;
+	border-bottom: 1px solid #ccc;
+}
