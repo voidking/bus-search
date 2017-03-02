@@ -1,0 +1,14 @@
+.pane{
+    padding: 10px;
+}
+
+.pane p{
+    display: block;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+.pane p .btn{
+    width: 100px;
+}

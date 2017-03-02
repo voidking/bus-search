@@ -1,0 +1,28 @@
+@import url(./header.css);
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  font-family: "Microsoft Yahei";
+}
+
+.form-reg {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-reg .form-control {
+  margin-bottom: 10px;
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-reg .form-control:focus {
+  z-index: 2;
+}
