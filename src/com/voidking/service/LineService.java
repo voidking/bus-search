@@ -48,6 +48,69 @@ public class LineService {
         return null;
     }
 	
+	public Line getLine(String bus_name) {
+		// 结果
+		Line result = null;
+		try {
+			Statement stmt = conn.createStatement();
+			String sql;
+			sql = "select * from bus_line where bus_name=" + bus_name;
+			ResultSet rs = stmt.executeQuery(sql);
+
+			// STEP 5: Extract data from result set
+			while (rs.next()) {
+				// Retrieve by column name
+				int id = rs.getInt("id");
+				String busName = rs.getString("bus_name");
+				String fullName = rs.getString("full_name");
+				String firstStop = rs.getString("first_stop");
+				String lastStop = rs.getString("last_stop");
+
+				result = new Line(id, busName, fullName, firstStop, lastStop);
+
+			}
+			// STEP 6: Clean-up environment
+			rs.close();
+			stmt.close();
+		} catch (SQLException se) {
+			// Handle errors for JDBC
+			se.printStackTrace();
+		} 
+		return result;
+	}
+	
+	public ArrayList<Line> searchLine(String key) {
+		// 结果集合
+		ArrayList<Line> result = new ArrayList<Line>();
+		try {
+			String sql = "select * from bus_line where full_name like ?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			// 设定参数
+			pstmt.setString(1, "%" + key + "%" );        
+			// 获取查询的结果集            
+			ResultSet rs = pstmt.executeQuery();
+
+			// STEP 5: Extract data from result set
+			while (rs.next()) {
+				// Retrieve by column name
+				int id = rs.getInt("id");
+				String busName = rs.getString("bus_name");
+				String fullName = rs.getString("full_name");
+				String firstStop = rs.getString("first_stop");
+				String lastStop = rs.getString("last_stop");
+
+				Line line = new Line(id, busName, fullName, firstStop, lastStop);
+				result.add(line);
+
+			}
+			rs.close();
+			pstmt.close();
+		} catch (SQLException se) {
+			se.printStackTrace();
+		} 
+		return result;
+	}
+	
 	public boolean creatLine(String busName, String fullName, String firstStop,String lastStop){
         try {
             String sql = "insert into bus_line(bus_name,full_name,first_stop,last_stop) values(?,?,?,?)";
@@ -103,6 +166,7 @@ public class LineService {
         }   
         return null;
     }
+	
 	public boolean deleteLineById(int id){
         try {
             String sql;

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.voidking.db.LineService;
+import com.voidking.service.LineService;
 import com.voidking.model.Line;
 
 import freemarker.template.Configuration;

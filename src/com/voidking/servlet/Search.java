@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.voidking.db.LineService;
+import com.voidking.service.LineService;
 import com.voidking.model.Line;
 
 @WebServlet("/Search")

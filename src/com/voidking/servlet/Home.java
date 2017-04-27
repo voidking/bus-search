@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.voidking.db.LineService;
+import com.voidking.service.LineService;
 import com.voidking.model.Line;
 
 import freemarker.template.Configuration;
@@ -31,7 +31,7 @@ public class Home extends HttpServlet {
 	
     public Home() {
         super();
-        this.lineList = lineService.getLines();
+        this.lineList = lineService.lineList();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
