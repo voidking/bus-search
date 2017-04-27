@@ -29,11 +29,6 @@ public class Home extends HttpServlet {
 	private LineService lineService = new LineService();
 	private ArrayList<Line> lineList = new ArrayList<Line>();
 	
-    public Home() {
-        super();
-        this.lineList = lineService.lineList();
-    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//freemarker配置  
@@ -47,6 +42,8 @@ public class Home extends HttpServlet {
         //创建数据模型  
         Map<String,Object> map=new HashMap<String,Object>();  
         map.put("basePath", request.getContextPath());
+        
+        this.lineList = lineService.lineList();
         map.put("lineList", lineList);
         
         response.setCharacterEncoding("utf8");
