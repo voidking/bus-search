@@ -8,7 +8,7 @@ public class ConnectMysql {
 	private String DB_URL = "jdbc:mysql://localhost/bus?useUnicode=true&characterEncoding=utf8";
 
 	private String USER = "root";
-	private String PASS = "mysql";
+	private String PASS = "";
 	
 	private Connection conn = null;
 	

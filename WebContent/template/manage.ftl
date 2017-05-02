@@ -51,6 +51,13 @@
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">路线管理</h1>
+        <div class="search input-group">
+          <input type="text" id="key" class="form-control" placeholder="输入路线或首尾站名">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="search">搜索</button>
+          </span>
+        </div>
+
         <h2 class="sub-header">路线列表</h2>
         <div class="table-responsive">
           <table class="user-table table table-striped">
@@ -92,6 +99,21 @@
     <p>尾站：<span class="lastStop">长春站</span></p>
   </div>
 </div>
+
+<script id="line-template" type="text/html">
+  {{each lineList as line}}
+  <tr data-id="{{line.id}}">
+    <td class="busName">{{line.busName}}</td>
+    <td class="fullName">{{line.fullName}}</td>
+    <td class="firstStop">{{line.firstStop}}</td>
+    <td class="lastStop">{{line.lastStop}}</td>
+    <td>
+      <!-- <button class="edit btn btn-sm btn-info">修改</button> -->
+      <button class="delete btn btn-sm btn-danger">删除</button>
+    </td>
+  </tr>
+  {{/each}}
+</script>
 <script src="${basePath}/public/lib/jquery/jquery.min.js"></script>
 <script src="${basePath}/public/lib/art-template/dist/template.js"></script> 
 <script src="${basePath}/public/lib/layer/src/layer.js"></script>
@@ -141,6 +163,33 @@ $(function(){
       }, function(){
 
       });
+  });
+
+  $('#search').click(function(event) {
+    var basePath = $('#basePath').val();
+    var key = $('#key').val();
+    $.ajax({
+        url: basePath+'/Search',
+        type: 'POST',
+        dataType: 'json',
+        data: {key: key},
+        success: function(data){
+            console.log(data);
+            var html = template('line-template', data);
+            $('.line-tbody').html(html);
+        },
+        error: function(xhr){
+            console.log(xhr);
+        }
+    });
+  });
+
+  $('#key').keypress(function(event) {
+    var key = event.which;
+    //console.log(key);
+    if(key == 13){
+        $('#search').trigger('click');
+    }
   });
 });
 </script>

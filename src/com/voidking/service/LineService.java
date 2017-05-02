@@ -83,10 +83,12 @@ public class LineService {
 		// 结果集合
 		ArrayList<Line> result = new ArrayList<Line>();
 		try {
-			String sql = "select * from bus_line where full_name like ?";
+			String sql = "select * from bus_line where full_name like ? or first_stop like ? or last_stop like ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			// 设定参数
-			pstmt.setString(1, "%" + key + "%" );        
+			pstmt.setString(1, "%" + key + "%" ); 
+			pstmt.setString(2, "%" + key + "%" ); 
+			pstmt.setString(3, "%" + key + "%" );  
 			// 获取查询的结果集            
 			ResultSet rs = pstmt.executeQuery();
 
