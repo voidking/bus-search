@@ -3,11 +3,11 @@
 
 http://www.voidking.com/2016/12/12/deve-bus-search/   
 
-![](http://7oxjrx.com1.z0.glb.clouddn.com//imgs/bus-search/result.gif)
+![](http://7oxjrx.com1.z0.glb.clouddn.com//imgs/bus-search/result.gif)   
 
 # URL
 ## 普通用户
-http://localhost:8080/bus-search/Admin/LoginPage  
+http://localhost:8080/bus-search/Home
 
 ## 管理员
 http://localhost:8080/bus-search/Admin/LoginPage  
