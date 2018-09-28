@@ -2,7 +2,7 @@
 公交线路搜索系统，mysql+jdbc+servlet+freemarker+json+jquery+arttemplate+百度地图api   
  
 
-![](http://7oxjrx.com1.z0.glb.clouddn.com//imgs/bus-search/result.gif)   
+![](http://cdn.voidking.com//imgs/bus-search/result.gif)   
 
 # URL
 ## 普通用户
