@@ -1,8 +1,10 @@
 # bus-search
 公交线路搜索系统，mysql+jdbc+servlet+freemarker+json+jquery+arttemplate+百度地图api   
+项目详细说明[点这里](https://www.voidking.com/2016/12/12/deve-bus-search-system/)。   
  
 
 ![](http://cdn.voidking.com//imgs/bus-search/result.gif)   
+
 
 # URL
 ## 普通用户
